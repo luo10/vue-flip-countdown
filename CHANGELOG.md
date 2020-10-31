@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/tomieric/vue-flip-countdown/compare/v0.0.3...v0.0.4) (2020-10-31)
+
+
+### Bug Fixes
+
+* **component:** card-bottom ([608dda8](https://github.com/tomieric/vue-flip-countdown/commit/608dda838bf0433ed0aaee0b5fd66aba6a184216))
+* **component,style:** animation ([278c7ed](https://github.com/tomieric/vue-flip-countdown/commit/278c7ed8064cb3a53fa8b9a03b08a9660d107972))
+
 ### 0.0.3 (2020-10-31)
 
 
