@@ -33,7 +33,7 @@
 import { v4 as uuidv4 } from 'uuid'
 import { defineComponent, ref, reactive, computed, onUnmounted, watch } from 'vue'
 
-const padZero = (n: string): string => Number(n) > 9 ? n : `0${n}`
+const padZero = (n: string): string => `0${n}`.slice(-2)
 
 export default defineComponent({
   name: 'flipCountdown',
@@ -164,18 +164,18 @@ export default defineComponent({
       }
 
       const item = data[index as number]
-      const val =  newValue < 0 ? 0 : newValue
+      const val =  newValue < 0 ? '0' : newValue
       const el: HTMLDivElement | null = document.querySelector(`#${item.elementId}`)
 
       if (!el) return
 
-      if (val !== item.current) {
+      if (padZero(val) !== item.current) {
         item.previous = padZero(item.current)
         item.current = padZero(val)
 
         if (el) {
           el.classList.remove('flip')
-          el.offsetWidth;
+          void el.offsetWidth
           el.classList.add('flip')
         }
 
@@ -188,7 +188,9 @@ export default defineComponent({
                 const newCls = cls + '-4digits'
                 el.classList.add(newCls)
                 el.classList.remove(cls)
-              } else {
+              }
+            } else {
+              if (cls.includes('-4digits')) {
                 const newCls = cls.replace('-4digits', '')
                 el.classList.add(newCls)
                 el.classList.remove(cls)

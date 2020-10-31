@@ -121,21 +121,6 @@
       overflow: hidden;
       z-index: -1;
     }
-
-    &-back::before,
-    &-back-4digits::before {
-      z-index: 1;
-      animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
-      animation-fill-mode: both;
-      transform-origin: center bottom;
-    }
-
-    &-bottom,
-    &-bottom-4digits {
-      transform-origin: center top;
-      animation-fill-mode: both;
-      animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
-    }
   }
 
   @media screen and (min-width: 1000px){
@@ -149,6 +134,14 @@
 }
 
 .flip {
+  .vue-flip-countdown-card-back::before,
+  .vue-flip-countdown-bard-back-4digits::before {
+    z-index: 1;
+    animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+    animation-fill-mode: both;
+    transform-origin: center bottom;
+  }
+
   .vue-flip-countdown-card-bottom,
   .vue-flip-countdown-card-bottom-4digits {
     transform-origin: center top;
