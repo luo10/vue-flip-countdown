@@ -6,7 +6,7 @@
     "build": "typecheck . && rm -rf dist && vite build",
     "lib": "typecheck . && rm -rf lib && vite build --config build.config.ts",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
-    "release": "standard-version && npm run lib && npm publish"
+    "release": "standard-version && npm run lib && git push --follow-tags && npm publish"
   },
   "main": "lib/vue-flip-countdown.js",
   "typings": "src/entry.ts",
