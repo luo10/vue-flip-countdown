@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "scripts": {
     "dev": "vite",
-    "build": "typecheck . && rm -rf lib && vite build --write",
+    "build": "typecheck . && rm -rf dist && vite build",
     "lib": "typecheck . && rm -rf lib && vite build --config build.config.ts",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "release": "standard-version && npm run lib && npm publish"
