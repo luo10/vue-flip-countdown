@@ -31,5 +31,3 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * **Initialize:** first commit 16df5b2
-
-# CHANGELOG

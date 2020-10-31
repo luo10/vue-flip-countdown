@@ -5,7 +5,6 @@
     "dev": "vite",
     "build": "typecheck . && rm -rf dist && vite build",
     "lib": "typecheck . && rm -rf lib && vite build --config build.config.ts",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "release": "standard-version && npm run lib && git push --follow-tags && npm publish"
   },
   "main": "lib/vue-flip-countdown.js",
@@ -27,7 +26,6 @@
     "@vue/compiler-sfc": "^3.0.2",
     "@vuedx/typecheck": "^0.2.4-0",
     "@vuedx/typescript-plugin-vue": "^0.2.4-0",
-    "conventional-changelog-cli": "^2.1.0",
     "less": "^3.12.2",
     "rollup-plugin-replace": "^2.2.0",
     "standard-version": "^9.0.0",
