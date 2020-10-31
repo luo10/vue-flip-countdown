@@ -12,7 +12,7 @@
           {{ item.current }}
         </b>
         <b
-          :data-value="data.current"
+          :data-value="item.current"
           class="vue-flip-countdown-card-bottom"
         ></b>
         <b 
