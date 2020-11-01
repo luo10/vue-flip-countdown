@@ -83,13 +83,13 @@ export default defineComponent({
 | Attribute | Description | Type | Accepted Values | Default |
 | - | - | - | - | - |
 | deadline | the end time | `String` | the date string | `-` |
-| stop | stop flip animation | `Boolean` | `true|false` | `false` |
-| showDays | display days card | `Boolean` | `true|false` | `true` |
-| showHours | display hours card | `Boolean` | `true|false` | `true` |
-| showMinutes | display minutes card | `Boolean` | `true|false` | `true` |
-| showSeconds | display seconds card | `Boolean` | `true|false`| `true` |
+| stop | stop flip animation | `Boolean` | `true/false` | `false` |
+| showDays | display days card | `Boolean` | `true/false` | `true` |
+| showHours | display hours card | `Boolean` | `true/false` | `true` |
+| showMinutes | display minutes card | `Boolean` | `true/false` | `true` |
+| showSeconds | display seconds card | `Boolean` | `true/false`| `true` |
 | labels | the alias name of labels | `Object` | `{days: '天' }` | `-` |
-| showSlot | This display card text | `Boolean` | `true|false` | `true` |
+| showSlot | This display card text | `Boolean` | `true/false` | `true` |
 
 ## development
 
