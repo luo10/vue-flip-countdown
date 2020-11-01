@@ -1,17 +1,32 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <h2>默认</h2>
+  <h2>DEFAULTS</h2>
   <flipCountdown
     :deadline="deadline"
     @timeElapsed="timeElapsedHandler"
   />
 
-  <h2>不显示天数</h2>
+  <h2>Not show days </h2>
   <flipCountdown
     :deadline="deadline"
     :showDays="false"
     @timeElapsed="timeElapsedHandler"
   />
+
+  <h2>Slot content</h2>
+  <flipCountdown
+    :deadline="deadline"
+    :show-days="false"
+    :show-slot="false"
+    @timeElapsed="timeElapsedHandler"
+  >
+    <template #Hours>
+      <span class="demo-colon">:</span>
+    </template>
+    <template #Minutes>
+      <span class="demo-colon">:</span>
+    </template>
+  </flipCountdown>
 
 </template>
 
@@ -42,3 +57,16 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="less" scoped>
+.demo-colon {
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: top;
+  height: 70px;
+  line-height: 70px;
+  font-weight: 700;
+  font-size: 32px;
+  color: #333;
+}
+</style>

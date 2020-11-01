@@ -1,31 +1,32 @@
 <template>
-  <div class="vue-flip-countdown" v-show="show">
-    <span
-      v-for="item in data"
-      :key="item.label"
-      :id="item.elementId"
-      class="vue-flip-countdown-item"
-      v-show="item.show"
-    >
-      <span class="vue-flip-countdown-card">
-        <b class="vue-flip-countdown-card-top">
-          {{ item.current }}
-        </b>
-        <b
-          :data-value="item.current"
-          class="vue-flip-countdown-card-bottom"
-        ></b>
-        <b 
-          class="vue-flip-countdown-card-back"
-          :data-value="item.previous"
-        ></b>
-        <b
-          class="vue-flip-countdown-card-back-bottom"
-          :data-value="item.previous"
-        ></b>
+  <div class="vue-flip-countdown">
+    <template v-for="item in data" :key="item.label">
+      <span
+        :id="item.elementId"
+        class="vue-flip-countdown-item"
+        v-show="item.show"
+      >
+        <span class="vue-flip-countdown-card">
+          <b class="vue-flip-countdown-card-top">
+            {{ item.current }}
+          </b>
+          <b
+            :data-value="item.current"
+            class="vue-flip-countdown-card-bottom"
+          ></b>
+          <b 
+            class="vue-flip-countdown-card-back"
+            :data-value="item.previous"
+          ></b>
+          <b
+            class="vue-flip-countdown-card-back-bottom"
+            :data-value="item.previous"
+          ></b>
+        </span>
+        <span v-if="showSlot" class="vue-flip-countdown-slot">{{ item.label }}</span>
       </span>
-      <span class="vue-flip-countdown-slot">{{ item.label }}</span>
-    </span>
+      <slot :name="item.label"></slot>
+    </template>
   </div>
 </template>
 
@@ -68,13 +69,16 @@ export default defineComponent({
         minutes: 'Minutes',
         seconds: 'Seconds'
       })
+    },
+    showSlot: {
+      type: Boolean,
+      default: true
     }
   },
 
   setup: (props, { emit }) => {
     let frame: any
     const uid = uuidv4()
-    const show = ref(false)
     const date = ref(0)
     const interval = ref(0)
     const diff = ref(0)
@@ -136,8 +140,6 @@ export default defineComponent({
       if (val === 0) {
         emit('timeElapsed')
         updateAllCards()
-      } else {
-        show.value = true
       }
     })
 
@@ -149,10 +151,6 @@ export default defineComponent({
     const intervalTimer = setInterval(() => {
       now.value = Math.trunc(Date.now() / 1000)
     }, 1e3)
-
-    if (diff.value !== 0) {
-      show.value = true
-    }
 
     function updateTime (index?: number, newValue?: any) {
       if (index && index >= data.length || newValue === undefined) {
@@ -215,7 +213,6 @@ export default defineComponent({
 
     return {
       data,
-      show,
       date,
       interval,
       diff
