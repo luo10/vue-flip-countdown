@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/tomieric/vue-flip-countdown/compare/v0.0.4...v0.0.5) (2020-11-01)
+
+
+### Features
+
+* **component:** add slot ([5a2f21c](https://github.com/tomieric/vue-flip-countdown/commit/5a2f21c6703a6946f9ac4285684db26b4820b9e3))
+
 ### [0.0.4](https://github.com/tomieric/vue-flip-countdown/compare/v0.0.3...v0.0.4) (2020-10-31)
 
 
